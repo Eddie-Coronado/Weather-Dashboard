@@ -8,46 +8,6 @@ window.addEventListener("load", () => {
         existingHistory = JSON.parse(localStorage.getItem("history"));
     }
 
-    const getUVIndex = (lat, lon) => {
-        fetch("https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey + "&lat=" + lat + "&lon=" + lon)
-            .then(function (res) {
-                return res.json()
-            })
-            .then( (data) => {
-            const UVIndex = data.value;
-            console.log(UVIndex);
-            $(".currentUVIndex").html(UVIndex);
-            })
-    }
-
-    const addToList = () => {
-        const ul = document.getElementById("city-list");
-        const city = document.getElementById("city");
-        const li = document.createElement("li");
-        li.setAttribute('id',city.value);
-        li.appendChild(document.createTextNode(city.value));
-        ul.appendChild(li);
-    }
-
-    const getForecast = (cityValue) =>  {
-        fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + cityValue + "&units=imperial&appid=" + APIKey)
-            .then(function (res) {
-                return res.json()
-            })
-            .then(function (data) {
-                for (i=0;i<5;i++){
-                const date = new Date((data.list[((i+1)*8)-1].dt)*1000).toLocaleDateString();
-                const temp = data.list[((i+1)*8)-1].main.temp;
-                const humidity = data.list[((i+1)*8)-1].main.humidity;
-                
-                console.log(data);
-
-                $(".date" + i ).html(date);
-                $(".temp" + i).html("Temp: " + temp + " F");
-                $(".hum"+ i).html("Humidity: " + humidity + "%");
-            }})
-    }
-
 
     const getWeather = (findCity) => { 
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" + findCity + "&units=imperial&appid=" + APIKey)
@@ -79,6 +39,47 @@ window.addEventListener("load", () => {
                
             })
     }
+
+    const getForecast = (cityValue) =>  {
+        fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + cityValue + "&units=imperial&appid=" + APIKey)
+            .then(function (res) {
+                return res.json()
+            })
+            .then(function (data) {
+                for (i=0;i<5;i++){
+                const date = new Date((data.list[((i+1)*8)-1].dt)*1000).toLocaleDateString();
+                const temp = data.list[((i+1)*8)-1].main.temp;
+                const humidity = data.list[((i+1)*8)-1].main.humidity;
+                
+                console.log(data);
+
+                $(".date" + i ).html(date);
+                $(".temp" + i).html("Temp: " + temp + " F");
+                $(".hum"+ i).html("Humidity: " + humidity + "%");
+            }})
+    }
+
+    const getUVIndex = (lat, lon) => {
+        fetch("https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey + "&lat=" + lat + "&lon=" + lon)
+            .then(function (res) {
+                return res.json()
+            })
+            .then( (data) => {
+            const UVIndex = data.value;
+            console.log(UVIndex);
+            $(".currentUVIndex").html(UVIndex);
+            })
+    }
+
+    const addToList = () => {
+        const ul = $("#city-list")[0];
+        const city = $("#city")[0];
+        const li = document.createElement("li");
+        li.setAttribute('id',city.value);
+        li.appendChild(document.createTextNode(city.value));
+        ul.appendChild(li);
+    }
+
 
     $(".searchBtn").on("click", (e) => {
         e.preventDefault();
