@@ -1,6 +1,7 @@
 
 
 # Weather Dashboard
+![Weather Dashboard](https://user-images.githubusercontent.com/75331399/125374759-87c04600-e33c-11eb-8fa4-ac8b0d8048ef.PNG)
 
 ## Description
 This project was to creat a weather dashboard using OpenWeather API and local storage.
