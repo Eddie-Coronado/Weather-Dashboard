@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+
+    <header class="jumbotron text-center">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <div class="row">
+        <div class="col-4 ml-5">
+            <div class="card-body">
+                <h5 class="card-title">Search for a City:</h5>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 city-input search" id="city" type="search">
+                    <button class="btn my-2 my-sm-0 searchBtn" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+                <div>
+                    <ul class="list-group" id="city-list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-7">
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title city-title"></h5>
+                        <p class="card-text currentTemp"></p>
+                        <p class="card-text currentHum"></p>
+                        <p class="card-text currentWind"></p>
+                        <p class="card-text currentUVIndex"></p>
+                        <p class="card-text currentIcon"></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <h5 class="col-sm-14 text-center">5 Day Forecast:</h5>
+            
+            <div class="card-deck text-center text-white">
+                <div class="col-sm-4">
+                    <div class="card bg-primary">
+                        <div class="card-body">
+                            <h5 class="date0"></h5>
+                            <p class="temp0"></p>
+                            <p class="hum0"></p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-sm-4 cards">
+                    <div class="card bg-primary">
+                        <div class="card-body">
+                            <h5 class="date1"></h5>
+                            <p class="temp1"></p>
+                            <p class="hum1"></p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-sm-4 cards">
+                    <div class="card bg-primary">
+                        <div class="card-body">
+                            <h5 class="date2"></h5>
+                            <p class="temp2"></p>
+                            <p class="hum2"></p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-sm-4 cards">
+                    <div class="card bg-primary">
+                        <div class="card-body">
+                            <h5 class="date3"></h5>
+                            <p class="temp3"></p>
+                            <p class="hum3"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4 cards">
+                    <div class="card bg-primary">
+                        <div class="card-body">
+                            <h5 class="date4"></h5>
+                            <p class="temp4"></p>
+                            <p class="hum4"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="./assets/script.js"></script>
+
+</html>

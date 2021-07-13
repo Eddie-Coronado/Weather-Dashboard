@@ -1,0 +1,22 @@
+.jumbotron{
+    color: white !important;
+    background-color:#353535 !important;
+    }
+.cards{
+    margin-bottom: 8px;
+}
+
+
+ul {
+    list-style: none;
+   }
+
+li{
+    border: 1px solid rgb(123, 123, 124);
+    padding-left: 4px;
+    margin-bottom: 1px;
+}
+
+.search{
+    margin-bottom: 8px;
+}
